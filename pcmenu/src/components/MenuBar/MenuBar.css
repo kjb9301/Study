@@ -1,0 +1,17 @@
+.menuBar-wrapper {
+  flex: .15;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  text-align: center;
+  padding: 5px 0;
+  border: 1px solid black;
+  cursor: pointer;
+}

@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  border: 1px solid red;
+  flex: .2;
+}
+
+.section {
+  border: 1px solid blue;
+  flex: 2;
+  display: flex;
+}
+
+.footer {
+  border: 1px solid green;
+  flex: 1;
+  display: flex;
+}

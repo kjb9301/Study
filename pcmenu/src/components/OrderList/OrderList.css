@@ -1,0 +1,15 @@
+.orderList-wrapper {
+  border: 1px solid brown;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-content {
+  border: 1px solid black;
+  display: flex;
+}
+
+.order-content div {
+  flex: 1;
+}
