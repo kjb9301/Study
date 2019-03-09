@@ -5,14 +5,15 @@ import { connect } from 'react-redux';
 import * as pcmenuActions from 'store/modules/pcmenu';
 import MenuList from 'components/MenuList';
 import MenuBar from 'components/MenuBar';
-import axios from 'axios';
 
 class MenuListContainer extends Component {
   getData = () => {
     const { PcmenuActions } = this.props;
-    console.log(111);
-    console.log(PcmenuActions.getMenu());
     PcmenuActions.getMenu();
+  }
+
+  handleType = (type) => {
+    console.log(type);
   }
 
   componentDidMount(){
@@ -20,17 +21,14 @@ class MenuListContainer extends Component {
   }
 
   render() {
-    const {list} = this.props;
+    const { menuList } = this.props;
+    const { handleType } = this;
+    console.log(menuList);
 
-    const test = axios.get('https://study-1c4d9.firebaseio.com/menu.json').then((obj) => {
-      return obj.data;
-    });
-    console.log(test);
-    
     return (
       <Fragment>
-        <MenuBar/>
-        <MenuList/>
+        <MenuBar onType={handleType}/>
+        <MenuList menuList={menuList}/>
       </Fragment>
     );
   }
@@ -38,7 +36,7 @@ class MenuListContainer extends Component {
 
 export default connect(
   (state) => ({
-    list: state.pcmenu.get('list')
+    menuList: state.pcmenu.get('list')
   }),
   (dispatch) => ({
     PcmenuActions: bindActionCreators(pcmenuActions,dispatch)

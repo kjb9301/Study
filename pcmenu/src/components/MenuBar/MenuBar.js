@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import './MenuBar.css';
 
-const MenuBar = () => {
+const MenuBar = ({onType}) => {
   return (
     <div className="menuBar-wrapper">
       <ul>
-        <li>전체</li>
-        <li>라면류</li>
-        <li>음료류</li>
-        <li>스낵류</li>
+        <li onClick={() => onType()}>전체</li>
+        <li onClick={() => onType("ramen")}>라면류</li>
+        <li onClick={() => onType("drink")}>음료류</li>
+        <li onClick={() => onType("snack")}>스낵류</li>
       </ul>
     </div>
   );

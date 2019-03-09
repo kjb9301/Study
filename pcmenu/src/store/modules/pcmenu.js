@@ -1,30 +1,31 @@
 import { createAction, handleActions } from 'redux-actions';
 import { List, Map } from 'immutable';
 import { pender } from 'redux-pender';
-import axios from 'axios';
-
-
-function getData(){
-  axios.get('https://study-1c4d9.firebaseio.com/menu.json').then((obj)=>{
-    return obj.data;
-  })
-}
+import * as api from 'lib/api';
 
 const GET_MENU = 'GET_MENU';
+const GET_TYPE = 'GET_TYPE';
 
-export const getMenu = createAction(GET_MENU,getData);
+export const getMenu = createAction(GET_MENU, api.getData);
+export const getType = createAction(GET_TYPE);
 
 const initialState = Map({
-  list: List()
+  list: List(),
+  type: ''
 });
 
 export default handleActions({
   ...pender({
     type: GET_MENU,
     onSuccess: (state,action) => {
-      console.log(action);
-      const list = action.payload.list;
+      const list = action.payload.data;
       return state.set('list',list);
+    }
+  }),
+  ...pender({
+    type: GET_TYPE,
+    onSuccess: (state,action) => {
+      
     }
   })
 },initialState);

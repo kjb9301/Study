@@ -1,16 +1,8 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import App from 'components/App';
-
-import modules from 'store/modules';
-import { createStore, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
-import penderMiddleWare from 'redux-pender';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configure from 'store/configure';
-
-//const logger = createLogger();
-//const store = createStore(modules, applyMiddleware(logger,penderMiddleWare()));
 
 const store = configure();
 
