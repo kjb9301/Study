@@ -15,8 +15,14 @@
   flex: .5;
 }
 
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .selectbox-wrapper select {
   width: 100%;
+  height: 50px;
 }
 
 .input-wrapper {

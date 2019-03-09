@@ -5,11 +5,28 @@ import { connect } from 'react-redux';
 import * as pcmenuActions from 'store/modules/pcmenu';
 import MenuList from 'components/MenuList';
 import MenuBar from 'components/MenuBar';
+import axios from 'axios';
 
 class MenuListContainer extends Component {
+  getData = () => {
+    const { PcmenuActions } = this.props;
+    console.log(111);
+    console.log(PcmenuActions.getMenu());
+    PcmenuActions.getMenu();
+  }
+
+  componentDidMount(){
+    this.getData();
+  }
+
   render() {
     const {list} = this.props;
-    console.log(list)
+
+    const test = axios.get('https://study-1c4d9.firebaseio.com/menu.json').then((obj) => {
+      return obj.data;
+    });
+    console.log(test);
+    
     return (
       <Fragment>
         <MenuBar/>

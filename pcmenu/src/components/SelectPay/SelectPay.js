@@ -7,8 +7,8 @@ const SelectPay = () => {
       <div className="pay-method-wrapper">
         <div className="pay-method-header">결제수단선택</div>
         <div className="radio-wrapper">
-          <input type="radio"/> 현금
-          <input type="radio"/> 카드
+          <div><input type="radio" id="cash"/><label for="cash"><span></span>현금</label></div>
+          <div><input type="radio" id="card"/><label for="card"><span></span>카드</label></div>
         </div>
       </div>
 

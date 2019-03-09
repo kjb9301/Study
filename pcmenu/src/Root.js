@@ -7,9 +7,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import penderMiddleWare from 'redux-pender';
 import { Provider } from 'react-redux';
+import configure from 'store/configure';
 
-const logger = createLogger();
-const store = createStore(modules, applyMiddleware(logger,penderMiddleWare()));
+//const logger = createLogger();
+//const store = createStore(modules, applyMiddleware(logger,penderMiddleWare()));
+
+const store = configure();
 
 const Root = () => {
   return (
