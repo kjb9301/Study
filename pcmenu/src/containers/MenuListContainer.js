@@ -13,7 +13,13 @@ class MenuListContainer extends Component {
   }
 
   handleType = (type) => {
-    console.log(type);
+    const { PcmenuActions } = this.props;
+    PcmenuActions.getType(type);
+  }
+
+  handleClick = (menu) => {
+    const { PcmenuActions } = this.props;
+    PcmenuActions.setOrder(menu); 
   }
 
   componentDidMount(){
@@ -21,14 +27,17 @@ class MenuListContainer extends Component {
   }
 
   render() {
-    const { menuList } = this.props;
-    const { handleType } = this;
-    console.log(menuList);
+    const { list, menuType } = this.props;
+    const { handleType, handleClick } = this;
+    let menuList = [];
+
+    if(menuType == '') menuList = list;
+    else menuList = list.filter((v) => v.type == menuType);
 
     return (
       <Fragment>
         <MenuBar onType={handleType}/>
-        <MenuList menuList={menuList}/>
+        <MenuList menuList={menuList} onClick={handleClick}/>
       </Fragment>
     );
   }
@@ -36,7 +45,8 @@ class MenuListContainer extends Component {
 
 export default connect(
   (state) => ({
-    menuList: state.pcmenu.get('list')
+    list: state.pcmenu.get('list'),
+    menuType: state.pcmenu.get('type')
   }),
   (dispatch) => ({
     PcmenuActions: bindActionCreators(pcmenuActions,dispatch)

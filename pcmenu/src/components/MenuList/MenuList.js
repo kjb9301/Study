@@ -1,16 +1,14 @@
 import React from 'react';
 import './MenuList.css';
 
-const MenuList = ({menuList}) => {
+const MenuList = ({menuList, onClick}) => {
   const menues = menuList.map((menu) => {
-    const { id, name, price, img, count } = menu;
+    const { id } = menu;
     return (
       <MenuItem
         key={id}
-        menu_name={name}
-        menu_price={price}
-        menu_img={img}
-        menu_count={count}
+        onClick={onClick}
+        menu={menu}
       />
     )
   })
@@ -21,14 +19,17 @@ const MenuList = ({menuList}) => {
   );
 };
 
-const MenuItem = ({menu_name,menu_price,menu_img,menu_count}) => {
+const MenuItem = ({onClick,menu}) => {
+  const { name, price, img, count } = menu;
   return (
     <div className="item-wrapper">
-      <div className="item-name"><span>{menu_name}</span></div>
-      <div className="item-img"><img src={menu_img} alt={menu_name}/></div>
+      <div className="item-name"><span>{name}</span></div>
+      <div className="item-img"><img src={img} alt={name}/></div>
       <div className="item-bottom">
-        <div className="item-count">{menu_count}</div>
-        <div className="item-price">{menu_price}</div>
+        <div className="item-btn">
+          <button onClick={() => onClick(menu)}>담기</button>
+        </div>
+        <div className="item-price">{price}<span>원</span></div>
       </div>
     </div>
   );

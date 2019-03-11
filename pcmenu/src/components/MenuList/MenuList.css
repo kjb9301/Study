@@ -24,3 +24,19 @@
 .item-name span {
   font-size: 30px;
 }
+
+.item-bottom {
+  display: flex;
+}
+
+.item-bottom .item-btn {
+  flex: 1;
+}
+
+.item-bottom .item-btn button {
+  width: 100%;
+}
+
+.item-bottom .item-price {
+  flex: 1;
+}
