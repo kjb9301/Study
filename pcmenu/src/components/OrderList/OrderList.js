@@ -12,10 +12,10 @@ const OrderList = ({order}) => {
         <div><span>최종금액</span></div>
       </div>
       <div className="order-content">
-        <div><span>{order.name}</span></div>
+        {/* <div><span>{order.name}</span></div>
         <div><span>{order.price}</span></div>
         <div><span>{order.count}</span></div>
-        <div><span>{order.total}</span></div>
+        <div><span>{order.total}</span></div> */}
       </div>
     </div>
   );

@@ -2,9 +2,9 @@
   flex: 1;
   border: 1px solid red;
   display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-auto-rows: minmax(auto);
-  overflow-y: scroll; 
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  grid-auto-rows: minmax(auto,auto);
+  overflow: hidden scroll; 
 }
 
 .item-wrapper {

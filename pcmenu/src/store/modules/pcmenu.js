@@ -14,12 +14,13 @@ export const setOrder = createAction(SET_ORDER);
 const initialState = Map({
   list: List(),
   type: '',
-  order: {
-    name: '',
-    price: '',
-    count: 0,
-    total: 0
-  }
+  // order: {
+  //   name: '',
+  //   price: '',
+  //   count: 0,
+  //   total: 0
+  // }
+  orderList: []
 });
 
 export default handleActions({
@@ -35,8 +36,10 @@ export default handleActions({
     return state.set('type',type);
   },
   [SET_ORDER]: (state,action) => {
-    const { name, price } = action.payload;
-    return state.setIn(['order','name'],name)
-                .setIn(['order','price'],price)
+    const order = action.payload;
+    return state.set('orderList',order)
+    // const { name, price } = action.payload;
+    // return state.setIn(['order','name'],name)
+    //             .setIn(['order','price'],price)
   }
 },initialState);

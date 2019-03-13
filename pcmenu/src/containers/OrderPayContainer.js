@@ -9,10 +9,11 @@ import Payment from 'components/Payment';
 
 class OrderPayContainer extends Component {
   render() {
-    const { order } = this.props;
+    const { orderList } = this.props;
+    console.log(orderList)
     return (
       <Fragment>
-        <OrderList order={order}/>
+        <OrderList/>
         <SelectPay/>
         <Payment/>
       </Fragment>
@@ -22,7 +23,7 @@ class OrderPayContainer extends Component {
 
 export default connect(
   (state) => ({
-    order: state.pcmenu.get('order'),
+    orderList: state.pcmenu.get('orderList')
   }),
   (dispatch) => ({
     PcmenuActions: bindActionCreators(pcmenuActions,dispatch)
