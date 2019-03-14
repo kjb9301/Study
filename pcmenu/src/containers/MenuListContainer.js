@@ -7,10 +7,7 @@ import MenuList from 'components/MenuList';
 import MenuBar from 'components/MenuBar';
 
 class MenuListContainer extends Component {
-
-  state = {
-    counter : 0
-  }
+  state = { counter: 1 }
 
   getData = () => {
     const { PcmenuActions } = this.props;
@@ -24,18 +21,21 @@ class MenuListContainer extends Component {
 
   handleClick = (menu) => {
     const { PcmenuActions } = this.props;
+    const { counter } = this.state;
     let { orderList } = this.props;
-    let { counter }  = this.state
+    menu = {...menu, counter};
     
-    menu = {...menu, counter}
-    const overlap = (orderList.map(order => order.name).indexOf(menu.name) >= 0)? true : false;
     if(orderList.length < 1) orderList = orderList.concat(menu);
     else{
-      if(overlap){
-        orderList.map(order => {
-          if(order.name === menu.name) order.counter++;
-        })
-      }else{
+      const index = (orderList.findIndex(order => order.name === menu.name));
+      if(index >= 0){ 
+        orderList[index].counter++
+        orderList = [
+          ...orderList.slice(0,index),
+          orderList[index],
+          ...orderList.slice(index+1, orderList.length)
+        ];
+      }else {
         orderList = orderList.concat(menu);
       }
     }

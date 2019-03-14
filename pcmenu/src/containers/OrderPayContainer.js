@@ -10,10 +10,9 @@ import Payment from 'components/Payment';
 class OrderPayContainer extends Component {
   render() {
     const { orderList } = this.props;
-    console.log(orderList)
     return (
       <Fragment>
-        <OrderList/>
+        <OrderList orderList={orderList}/>
         <SelectPay/>
         <Payment/>
       </Fragment>
