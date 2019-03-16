@@ -29,7 +29,7 @@ class MenuListContainer extends Component {
     else{
       const index = (orderList.findIndex(order => order.name === menu.name));
       if(index >= 0){ 
-        orderList[index].counter++
+        orderList[index].counter++;
         orderList = [
           ...orderList.slice(0,index),
           orderList[index],

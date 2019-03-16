@@ -8,25 +8,27 @@ html, body {
 }
 
 .wrapper {
-  border: 1px solid black;
+  border: 5px solid black;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .header {
-  border: 1px solid red;
   flex: .2;
+  font-size: 50px;
+  color: rgb(233, 240, 173);
+  background-color: rgb(18, 19, 19);
+  line-height: 5rem;
+  padding-left: 70px;
 }
 
 .section {
-  border: 1px solid blue;
   flex: 2;
   display: flex;
 }
 
 .footer {
-  border: 1px solid green;
   flex: 1;
   display: flex;
 }

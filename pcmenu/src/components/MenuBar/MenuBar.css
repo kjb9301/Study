@@ -1,5 +1,6 @@
 .menuBar-wrapper {
   flex: .15;
+  background-color: rgb(18, 19, 19);
 }
 
 ul {
@@ -12,6 +13,15 @@ ul {
 ul li {
   text-align: center;
   padding: 5px 0;
-  border: 1px solid black;
+  margin: 1px;
+  background-color: rgb(42, 43, 43);
+  color: aliceblue;
+  font-size: 40px;
+  line-height: 5rem;
+  
+}
+
+li:hover {
   cursor: pointer;
+  border: 1px solid rgb(243, 243, 185);
 }

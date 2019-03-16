@@ -1,15 +1,64 @@
 .orderList-wrapper {
-  border: 1px solid brown;
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
+  background-color: rgb(42, 43, 43);
 }
 
-.order-content {
-  border: 1px solid black;
+.orderList-wrapper .orderList-header {
+  line-height: 5rem;
+  font-size: 30px;
+  color: rgb(220, 221, 221);
+  padding-left: 20px;
+}
+
+.order-wrapper {
+  text-align: center;
+  height: 100%;
+  background-color: white;
+}
+
+.order-wrapper .order-text {
+  display: flex;
+  line-height: 3rem;
+}
+
+.order-wrapper .order-text div {
+  flex: 1;
+  background-color:  rgb(70, 69, 69);
+  margin-right: 2px;
+}
+
+.order-wrapper .order-text span {
+  height: 100%;
+  font-size: 23px;
+  color: rgb(220, 221, 221);
+  font-weight: bold; 
+}
+
+.order-content .order-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.order-content .order-item div {
+  flex: 1;
+}
+
+.order-content .order-item div span {
+  font-size: 25px;
+}
+
+.order-item .item-count {
   display: flex;
 }
 
-.order-content div {
+.order-item .item-count .count-cal {
+  flex: .5;
+  cursor: pointer;
+}
+
+.order-item .item-count .count-text {
   flex: 1;
 }
