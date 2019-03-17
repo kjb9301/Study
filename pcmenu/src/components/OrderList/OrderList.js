@@ -1,12 +1,13 @@
 import React from 'react';
 import './OrderList.css';
 
-const OrderList = ({orderList}) => {
+const OrderList = ({orderList, onCount}) => {
   const orders = orderList.map((order,index) => {
     return (
       <OrderItem
         key={index}
         order={order}
+        onCount={onCount}
       />
     )
   })
@@ -28,19 +29,20 @@ const OrderList = ({orderList}) => {
   );
 };
 
-const OrderItem = ({onClick,order}) => {
-  const { name, price, counter } = order;
-  const total = price * counter;
+const OrderItem = ({order,onCount}) => {
+  const { id, name, price, counter } = order;
+  const priceSum = price * counter;
+  
   return (
     <div className="order-item">
       <div><span>{name}</span></div>
       <div><span>{price}원</span></div>
       <div className="item-count">
-        <span className="count-cal">-</span>
+        <span className="count-cal" onClick={()=>onCount(id,priceSum,"-")}>-</span>
         <span className="count-text">{counter}</span>
-        <span className="count-cal">+</span>
+        <span className="count-cal" onClick={()=>onCount(id,priceSum,"+")}>+</span>
       </div>
-      <div><span>{total}원</span></div>
+      <div><span>{priceSum}원</span></div>
     </div>
   );
 };
