@@ -62,3 +62,26 @@
 .order-item .item-count .count-text {
   flex: 1;
 }
+
+@media (max-width: 1360px) {
+  .orderList-wrapper .orderList-header {
+    line-height: 3rem;
+    font-size: 20px;
+  }
+
+  .order-wrapper .order-text {
+    line-height: 2rem;
+  }
+
+  .order-wrapper .order-text span {
+    font-size: 15px;
+  }
+
+  .order-content .order-item {
+    padding: 5px;
+  }
+
+  .order-content .order-item div span {
+    font-size: 13px;
+  }
+}

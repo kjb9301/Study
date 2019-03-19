@@ -6,7 +6,6 @@
 }
 
 .total-price {
-  border: 1px solid black;
   flex: 1;
   margin: 10px;
   background-color: rgb(128, 128, 125);
@@ -22,7 +21,6 @@
 }
 
 .pay-btn {
-  border: 1px solid black;
   flex: 1;
   margin: 10px;
 }
@@ -36,4 +34,23 @@
   background-color: rgb(230, 113, 138);
   color: aliceblue;
   border: none;
+}
+
+@media (max-width: 1360px) {
+  .total-price {
+    margin: 5px;
+    padding: 0;
+  }
+
+  .total-price span {
+    font-size: 40px;
+  }
+
+  .pay-btn {
+    margin: 5px;
+  }
+
+  .pay-btn button {
+    font-size: 30px;
+  }
 }

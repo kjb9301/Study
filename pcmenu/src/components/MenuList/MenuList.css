@@ -64,3 +64,39 @@
 .item-bottom .item-price {
   flex: 1;
 }
+
+@media (max-width:1360px){
+  .item-bottom .item-text {
+    flex: .7;
+  }
+
+  .item-img {
+    padding: 8px 0 8px 0;
+  }
+
+  .item-img img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .item-bottom .item-text div {
+    padding: 5px;
+  }
+  
+  .item-text .item-name span {
+    font-size: 15px;
+  }
+  
+  .item-text .item-price span {
+    font-size: 12px;
+  }
+
+  .item-bottom .item-btn {
+    flex: .3;
+  }
+
+  .item-bottom .item-btn button {
+    font-size: 15px;
+  }
+
+}

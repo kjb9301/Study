@@ -17,11 +17,17 @@ ul li {
   background-color: rgb(42, 43, 43);
   color: aliceblue;
   font-size: 40px;
-  line-height: 5rem;
-  
+  line-height: 5rem;  
 }
 
 li:hover {
   cursor: pointer;
   border: 1px solid rgb(243, 243, 185);
+}
+
+@media (max-width: 1360px) {
+  ul li {
+    font-size: 20px;
+    line-height: 3rem;  
+  }
 }

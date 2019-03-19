@@ -32,3 +32,11 @@ html, body {
   flex: 1;
   display: flex;
 }
+
+@media (max-width: 1360px) {
+  .header {
+    font-size: 25px;
+    line-height: 4rem;
+    padding-left: 40px;
+  }
+}
