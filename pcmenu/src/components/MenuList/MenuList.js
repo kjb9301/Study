@@ -20,7 +20,7 @@ const MenuList = ({menuList, onClick}) => {
 };
 
 const MenuItem = ({onClick,menu}) => {
-  const { name, price, img, count } = menu;
+  const { name, price, img } = menu;
   return (
     <div className="item-wrapper">
       <div className="item-img"><img src={img} alt={name}/></div>

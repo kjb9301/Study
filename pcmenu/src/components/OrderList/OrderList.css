@@ -14,7 +14,7 @@
 
 .order-wrapper {
   text-align: center;
-  height: 100%;
+  height: calc(100% - 48px);
   background-color: white;
 }
 
@@ -34,6 +34,11 @@
   font-size: 23px;
   color: rgb(220, 221, 221);
   font-weight: bold; 
+}
+
+.order-content {
+  height: calc(100% - 32px);
+  overflow: hidden scroll;
 }
 
 .order-content .order-item {

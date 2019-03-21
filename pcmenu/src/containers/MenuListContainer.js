@@ -39,7 +39,10 @@ class MenuListContainer extends Component {
         orderList = orderList.concat(menu);
       }
     }
-    PcmenuActions.setOrder(orderList); 
+    PcmenuActions.setOrder(orderList);
+    const { totalPrice } = this.props;
+    const totalPriceSum = totalPrice + (menu.price * menu.counter);
+    PcmenuActions.setTotalPrice(totalPriceSum);
   }
 
   componentDidMount(){
@@ -67,7 +70,8 @@ export default connect(
   (state) => ({
     list: state.pcmenu.get('list'),
     menuType: state.pcmenu.get('type'),
-    orderList: state.pcmenu.get('orderList')
+    orderList: state.pcmenu.get('orderList'),
+    totalPrice: state.pcmenu.get('totalPrice')
   }),
   (dispatch) => ({
     PcmenuActions: bindActionCreators(pcmenuActions,dispatch)

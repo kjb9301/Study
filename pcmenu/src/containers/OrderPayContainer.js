@@ -21,7 +21,15 @@ class OrderPayContainer extends Component {
     let { orderList } = this.props;
     let newArr = orderList.slice();
     const index = newArr.findIndex(order => order.id === id);
-    sign === "+" ? newArr[index].counter++ : newArr[index].counter--;
+    const { totalPrice } = this.props;
+    let totalPriceSum = 0;
+    if(sign === "+"){
+      newArr[index].counter++;
+      totalPriceSum = totalPrice + newArr[index].price;
+    }else{
+      newArr[index].counter--;
+      totalPriceSum = totalPrice - newArr[index].price;
+    }
     newArr = newArr.filter(order => order.counter !== 0);
     orderList = [
       ...newArr.slice(0,index),
@@ -29,7 +37,7 @@ class OrderPayContainer extends Component {
       ...newArr.slice(index+1, newArr.length)
     ];
     PcmenuActions.setOrder(orderList);
-    PcmenuActions.setTotalPrice(total);
+    PcmenuActions.setTotalPrice(totalPriceSum);
   }
 
   render() {
